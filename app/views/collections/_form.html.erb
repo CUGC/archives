@@ -41,7 +41,7 @@
   </div>
   <div class="field">
     <%= f.label :collection_id %><br />
-    <%= f.number_field :collection_id %>
+    <%= f.collection_select :collection_id, Collection.collections_for_select, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :is_event %><br />

@@ -10,6 +10,7 @@ gem 'devise'
 gem 'thin'
 gem 'cornell_ldap', '>= 1.4.0'
 gem 'cornell_netid', '>= 1.1.0'
+gem 'acts_as_tree'
 
 # Gems used only for assets and not required
 # in production environments by default.

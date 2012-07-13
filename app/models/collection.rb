@@ -3,4 +3,15 @@ class Collection < ActiveRecord::Base
   
   has_many :collections
   has_many :albums
+  
+  acts_as_tree
+  
+  validates_presence_of :name
+  validates_presence_of :when, :city, :state, :country, :if => Proc.new { |collection| collection.is_event }
+  
+  def self.collections_for_select
+    collections = Collection.all
+    collections.unshift Collection.new({:id => 0, :name => "None"})
+  end
+  
 end
