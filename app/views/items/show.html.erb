@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @item.id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @item.type %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @item.description %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @item.year %>
+</p>
+
+<p>
+  <b>Month:</b>
+  <%= @item.month %>
+</p>
+
+<p>
+  <b>Day:</b>
+  <%= @item.day %>
+</p>
+
+<p>
+  <b>Credit:</b>
+  <%= @item.credit %>
+</p>
+
+<p>
+  <b>Album:</b>
+  <%= @item.album_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
