@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120713115909) do
+ActiveRecord::Schema.define(:version => 20120713120518) do
 
   create_table "albums", :force => true do |t|
     t.string   "name",          :null => false
     t.integer  "collection_id", :null => false
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "user_id",       :null => false
   end
 
   create_table "collections", :force => true do |t|
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20120713115909) do
     t.boolean  "is_event",       :default => false
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
+    t.integer  "user_id",                           :null => false
   end
 
   create_table "comments", :force => true do |t|
