@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @collection.name %>
+</p>
+
+<p>
+  <b>Contact person:</b>
+  <%= @collection.contact_person %>
+</p>
+
+<p>
+  <b>When:</b>
+  <%= @collection.when %>
+</p>
+
+<p>
+  <b>Venue:</b>
+  <%= @collection.venue %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @collection.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @collection.state %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @collection.country %>
+</p>
+
+<p>
+  <b>Collection:</b>
+  <%= @collection.collection_id %>
+</p>
+
+<p>
+  <b>Is event:</b>
+  <%= @collection.is_event %>
+</p>
+
+
+<%= link_to 'Edit', edit_collection_path(@collection) %> |
+<%= link_to 'Back', collections_path %>
