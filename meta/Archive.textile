@@ -1,0 +1,91 @@
+h1. Archive
+
+This database provides the proper information structure to allow for proper archival organization of events-based items.
+
+It offers, at the very bottom, an organization in which one may identify uploads with users.
+
+h2. Special entries
+
+One event, with @id = 0, name = "General"@, would always exist to allow for the addition of collections which do not belong to an event.
+
+h2. Relationships
+
+* @Event@      belongsTo @Event@
+* @Collection@ belongsTo @Event@
+* @Item@       belongsTo @Collection@
+* @Comment@    belongsTo @Item@
+
+
+h2. Database Tables
+
+h3. Collection
+
+A Collection is merely a (chrono)logical grouping of events (sub-Collections) and/or albums.
+
+The criteria which distinguish an Event from a Collection is a flag, @is_event@, which the user can turn on or off.
+
+| field            | type                | description                                                                 |
+| @id@             | @INT(11), unsigned@ |                                                                             |
+| @name@           | @VARCHAR(255)@      | name of the collection                                                      |
+| @contact_person@ | @VARCHAR(255)@      | contact-person for collection. can be used to retrieve further information. |
+| @when@           | @VARCHAR(255)@      | date and/or time in which the collection's items were created               |
+| @venue@          | @VARCHAR(255)@      | venue in which the collection's items were created                          |
+| @city@           | @VARCHAR(255)@      | city in which the collection's items were created                           |
+| @state@          | @VARCHAR(255)@      | state or province in which the collection's items were created              |
+| @country@        | @VARCHAR(255)@      | country in which the collection's items were created (default: USA)         |
+| @collection_id@  | @INT(11), unsigned@ | collection to which this collection belongs (can be NULL if no parent)      |
+| @is_event@       | @BOOL, unsigned@    | a boolean value which tells whether or not the collection is an event       |
+
+h3. Album
+
+An Album is a collection of items.
+
+| field            | type                | description                            |
+| @id@             | @INT(11), unsigned@ |                                        |
+| @name@           | @VARCHAR(255)@      | name of the collection                 |
+| @collection_id@  | @INT(11), unsigned@ | collection to which this event belongs |
+
+h3. Item
+
+An Item is an artifact, photo, video, audio or otherwise, which is a member of the archives' collections.
+
+| field         | type                               | description                                                          |
+| @id@          | @INT(11), unsigned@                |                                                                      |
+| @type@        | @ENUM(photo,video,audio,document)@ | type of the upload                                                   |
+| @description@ | @TEXT@                             | text description of what the item is                                 |
+| @year@        | @YEAR@                             | year the item was _created_                                          |
+| @month@       | @INT(2)@                           | month the item was _created_                                         |
+| @day@         | @INT(2)@                           | day the item was _created_                                           |
+| @credit@      | @VARCHAR(255)@                     | person or entity to whom credit for the creation of the item belongs |
+| @album_id@    | @INT(11), unsigned@                | id of the collection to which this item belongs                      |
+
+h3. Comment
+
+| field     | type                | description                       |
+| @id@      | @INT(11), unsigned@ |                                   |
+| @content@ | @TEXT@              | the body text of the comment      |
+| @user_id@ | @INT(11), unsigned@ | User who submitted the comment    |
+| @item_id@ | @INT(11), unsigned@ | Item the comment is about         |
+| @created@ | @DATETIME@          | when the comment was created      |
+| @updated@ | @DATETIME@          | when the comment was last updated |
+
+h2. Identify Uploads
+
+In order to identify uploads, it is necessary to bind items to users. 
+
+h3. Add Field to @items@, @albums@, and @collections@ Tables
+
+| field     | type                | description                          |
+| @user_id@ | @INT(11), unsigned@ | id of the user who uploaded the item |
+
+h3. Create *User* Model
+
+| field           | type                               | description                                                          |
+| @id@            | @INT(11), unsigned@                |                                                                      |
+| @first_name@    | @VARCHAR(255)@                     | First name                                                           |
+| @last_name@     | @VARCHAR(255)@                     | Last name                                                            |
+| @email@         | @VARCHAR(255)@                     | Email address                                                        |
+| @password@      | @VARCHAR(255)@                     | Password, encrypted (preferably with bcrypt)                         |
+| @role@          | @ENUM(admin,moderator,user)@       | Role of the user (helps with permissions)                            |
+
+Add other information about last login time, etc as needed.

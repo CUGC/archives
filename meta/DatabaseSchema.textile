@@ -1,0 +1,8 @@
+h1. Archives Database
+
+h2. Item
+
+| @id@       | @INT(11)@      | |
+| @name@     | @VARCHAR(255)@ | The name of the archived item. A title, if you will. |
+| @uploaded@ | @DATETIME@     | When the item was uploaded. |
+| @
