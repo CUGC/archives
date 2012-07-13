@@ -24,7 +24,7 @@ describe CollectionsController do
   # Collection. As you add validations to Collection, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    attributes_for(:collection)
   end
   
   # This should return the minimal set of values that should be in the session
