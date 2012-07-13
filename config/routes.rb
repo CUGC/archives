@@ -1,4 +1,6 @@
 Archives::Application.routes.draw do
+  resources :albums
+
   resources :items
 
   resources :comments
