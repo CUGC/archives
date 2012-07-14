@@ -3,13 +3,13 @@ require 'spec_helper'
 describe "collections/edit" do
   before(:each) do
     @collection = assign(:collection, stub_model(Collection,
-      :name => "MyString",
-      :contact_person => "MyString",
-      :when => "MyString",
-      :venue => "MyString",
-      :city => "MyString",
-      :state => "MyString",
-      :country => "MyString",
+      :name => "Name",
+      :contact_person => "Contact Person",
+      :when => "When",
+      :venue => "Venue",
+      :city => "City",
+      :state => "State",
+      :country => "Country",
       :collection_id => 1,
       :is_event => false
     ))

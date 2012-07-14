@@ -25,7 +25,6 @@ describe "collections/show" do
     rendered.should match(/City/)
     rendered.should match(/State/)
     rendered.should match(/Country/)
-    rendered.should match(/1/)
     rendered.should match(/false/)
   end
 end
