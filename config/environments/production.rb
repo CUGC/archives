@@ -66,6 +66,6 @@ Archives::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   
   # Set Default URL (per devise instructions)
-  config.action_mailer.default_url_options = { :host => 'http://archives.gleeclub.com' }
+  config.action_mailer.default_url_options = { :host => 'archives.gleeclub.com' }
   
 end
