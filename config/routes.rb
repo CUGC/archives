@@ -11,7 +11,6 @@ Archives::Application.routes.draw do
   resources :albums
   resources :items
   resources :comments
-  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
