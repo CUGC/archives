@@ -25,7 +25,12 @@ class AlbumsController < ApplicationController
   # GET /albums/new.json
   def new
     @album = Album.new
-
+    
+    # Check to see if sub-album
+    if params.has_key? :collection_id
+      @album.collection_id = params[:collection_id]
+    end
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @album }
