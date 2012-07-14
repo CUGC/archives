@@ -34,4 +34,8 @@ Archives::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  # Set Default URL (per devise instructions)
+  config.action_mailer.default_url_options = { :host => 'http://localhost:3000' }
+  
 end
