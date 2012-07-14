@@ -15,7 +15,6 @@ h2. Relationships
 * @Item@       belongsTo @Collection@
 * @Comment@    belongsTo @Item@
 
-
 h2. Database Tables
 
 h3. Collection
