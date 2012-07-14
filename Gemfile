@@ -12,6 +12,13 @@ gem 'cornell_ldap', '>= 1.4.0'
 gem 'cornell_netid', '>= 1.1.0'
 gem 'acts_as_tree'
 
+# Authentication Framework
+gem 'devise'
+gem 'omniauth'
+
+# Notify webmaster of exceptions
+gem 'exception_notification', :require => 'exception_notifier'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do  

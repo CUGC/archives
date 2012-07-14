@@ -24,7 +24,7 @@
     <td><%= collection.city %></td>
     <td><%= collection.state %></td>
     <td><%= collection.country %></td>
-    <td><%= if collection.collection then link_to collection.collection.name, collection.name else "None" %></td>
+    <td><%= if collection.collection then link_to collection.collection.name, collection.name else "None" end %></td>
     <td><%= collection.is_event %></td>
     <td><%= link_to 'Edit', edit_collection_path(collection) %></td>
     <td><%= link_to 'Destroy', collection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
