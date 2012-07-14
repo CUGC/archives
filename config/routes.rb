@@ -1,10 +1,13 @@
 Archives::Application.routes.draw do
-  resources :collections
-
+  
+  resources :collections do
+    resources :collections
+    resources :albums do
+      resources :items
+    end
+  end
   resources :albums
-
   resources :items
-
   resources :comments
 
   # The priority is based upon order of creation:

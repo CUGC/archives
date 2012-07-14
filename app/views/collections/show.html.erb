@@ -3,6 +3,7 @@
   <p>
       <%= @collection.formatted_location unless @collection.formatted_location.blank? %>
   </p>
+  
 </p>
 
 <% unless @collection.contact_person.empty? %>
@@ -18,6 +19,16 @@
   <%= if @collection.collection then link_to @collection.collection.name, @collection.collection else "None" end %>
 </p>
 <% end %>
+
+<p>
+    <b>Actions:</b>
+    <ul>
+        <li><%= link_to 'New Album', new_collection_album_path(@collection) %></li>
+        <li><%= link_to 'New Collection', new_collection_collection_path(@collection) %></li>
+        <li><%= link_to 'Edit', edit_collection_path(@collection) %></li>
+        <li><%= link_to 'Back', collections_path %></li>
+    </ul>
+</p>
 
 <p>
   <b>Event?:</b>
@@ -44,5 +55,3 @@
     <%= "No albums." if @collection.albums.nil? || @collection.albums.empty? %>
 </div>
 
-<%= link_to 'Edit', edit_collection_path(@collection) %> |
-<%= link_to 'Back', collections_path %>
