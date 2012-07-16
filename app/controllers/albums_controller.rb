@@ -47,6 +47,8 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(params[:album])
 
+    @album.user_id = current_user.id
+
     respond_to do |format|
       if @album.save
         format.html { redirect_to @album, notice: 'Album was successfully created.' }

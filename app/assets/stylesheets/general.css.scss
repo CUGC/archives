@@ -1,0 +1,39 @@
+@import "compass";
+@import "cornell/variables";
+
+$FooterBackgroundColor: #ccc;
+
+#header {
+  margin:  0;
+  padding: 5px 20px;
+  background-color: $CURed;
+  h1 {
+    color: white;
+    @include inline-block;
+  }
+  
+}
+
+#content {
+  margin: 0 auto;
+  width: 800px;
+  padding: 10px;
+  color: $TextColor;
+  background-color: $BackgroundColorContent;
+  a {
+    color: $LinkColor;
+    &:hover {
+      color: $LinkColorHover;
+    }
+    &:visited {
+      color: $LinkColorVisited;
+    }
+  }
+}
+
+footer {
+  margin:  0;
+  padding: 15px;
+  color: $TextColor;
+  background-color: $FooterBackgroundColor;
+}

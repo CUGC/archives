@@ -1,36 +1,10 @@
 <h1>All Collections</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Contact person</th>
-    <th>When</th>
-    <th>Venue</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Country</th>
-    <th>Collection</th>
-    <th>Event?</th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @collections.each do |collection| %>
-  <tr>
-    <td><%= link_to collection.name, collection %></td>
-    <td><%= collection.contact_person %></td>
-    <td><%= collection.when %></td>
-    <td><%= collection.venue %></td>
-    <td><%= collection.city %></td>
-    <td><%= collection.state %></td>
-    <td><%= collection.country %></td>
-    <td><%= if collection.collection then link_to collection.collection.name, collection.name else "None" end %></td>
-    <td><%= collection.is_event %></td>
-    <td><%= link_to 'Edit', edit_collection_path(collection) %></td>
-    <td><%= link_to 'Destroy', collection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<ul>
+    <li><%= link_to collection.name, collection %><br /><%= collection.when %></li>
+</ul>
 <% end %>
-</table>
 
 <br />
 

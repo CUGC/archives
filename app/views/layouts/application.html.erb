@@ -8,14 +8,20 @@
 </head>
 <body>
 
-<header>
+<header id="header">
     <h1 id="cornell_university_glee_club_archives">Cornell University Glee Club Archives</h1>
 </header>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<div id="content">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-<%= yield %>
+    <%= yield %>
+</div>
+
+<footer>
+    &copy; 2012 Cornell University Glee Club. <%= link_to 'Contact Us', 'mailto:webmaster@gleeclub.cornell.edu' %>
+</footer>
 
 </body>
 </html>

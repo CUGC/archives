@@ -2,7 +2,7 @@ class CollectionsController < ApplicationController
   # GET /collections
   # GET /collections.json
   def index
-    @collections = Collection.all
+    @collections = Collection.all_root_collections
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,7 +25,7 @@ class CollectionsController < ApplicationController
   # GET /collections/new.json
   def new
     @collection = Collection.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @collection }
@@ -41,6 +41,8 @@ class CollectionsController < ApplicationController
   # POST /collections.json
   def create
     @collection = Collection.new(params[:collection])
+
+    @collection.user_id = current_user.id
 
     respond_to do |format|
       if @collection.save

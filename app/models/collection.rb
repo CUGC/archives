@@ -27,5 +27,8 @@ class Collection < ActiveRecord::Base
     municipalities
   end
   
+  def self.all_root_collections
+    self.where( :collection_id => nil )
+  end
   
 end
