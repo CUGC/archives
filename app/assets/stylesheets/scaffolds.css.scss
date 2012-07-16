@@ -1,3 +1,5 @@
+@import "cornell/variables";
+
 body {
   background-color: #fff;
   color: #333;
@@ -25,10 +27,17 @@ a {
 
 div {
   &.field, &.actions {
-    margin-bottom: 10px; } }
+    margin-bottom: 10px; 
+  }
+}
 
-#notice {
-  color: green; }
+#notice, .notice {
+  color: $CUGreen; 
+}
+
+.alert, #alert {
+  color: $CURedOrange;
+}
 
 .field_with_errors {
   padding: 2px;
