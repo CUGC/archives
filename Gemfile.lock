@@ -46,6 +46,8 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
+    compass-cornell-plugin (0.2.0)
+      compass (>= 0.10.0)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
     cornell_ldap (1.4.0)
@@ -168,6 +170,7 @@ DEPENDENCIES
   acts_as_tree
   bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 3.2.1)
+  compass-cornell-plugin (>= 0.2.0)
   compass-rails
   cornell_ldap (>= 1.4.0)
   cornell_netid (>= 1.1.0)
