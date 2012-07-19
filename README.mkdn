@@ -1,0 +1,7 @@
+# archives
+
+An online archival system for photos, videos, audio and other documents.
+
+Written specifically for the [Cornell University Glee Club](http://www.gleeclub.com) by [Parker Moore '14](http://parkermoore.de).
+
+License can be found in `LICENSE.mkdn`.
